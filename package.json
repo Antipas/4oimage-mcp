@@ -1,6 +1,6 @@
 {
   "name": "4oimage-mcp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "MCP server for 4o-image API integration - Generate images using text prompts and edit existing images",
   "main": "server/index.js",
   "type": "module",
@@ -24,7 +24,6 @@
     "3d-character-creator",
     "ai-barbie-generator",
     "chgpt-dog-to-human"
-
   ],
   "author": "Antipas",
   "license": "MIT",
