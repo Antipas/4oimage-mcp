@@ -66,7 +66,7 @@ export async function checkTaskStatus(taskId) {
   }
 }
 
-export async function pollTaskUntilComplete(taskId, progressCallback, interval = 3000, maxAttempts = 50) {
+export async function pollTaskUntilComplete(taskId, progressCallback, interval = 6000, maxAttempts = 50) {
   
   return new Promise((resolve, reject) => {
     let attempts = 0;
