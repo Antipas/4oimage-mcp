@@ -27,18 +27,15 @@ app.use((req, res, next) => {
   
   res.on('finish', () => {
     const duration = Date.now() - start;
-    console.log(`${req.method} ${req.originalUrl} ${res.statusCode} ${duration}ms`);
   });
   
   next();
 });
 
-// 错误处理中间件
+
 app.use((err, req, res, next) => {
-  console.error('Server error:', err);
   if (err instanceof SyntaxError && err.status === 400 && 'body' in err) {
-    // 处理JSON解析错误
-    console.error('JSON解析错误:', err.message);
+
     return res.status(400).json({ 
       error: 'Invalid JSON data',
       details: err.message
@@ -65,19 +62,15 @@ app.all('/mcp', async (req, res) => {
   const transport = new StreamableHTTPServerTransport(req, res);
   const sessionId = transport.sessionId;
   
-  console.log(`New MCP connection: ${sessionId}`);
-  
-  // 存储传输以便重用
+
   transports[sessionId] = transport;
   
-  // 当连接关闭时清理
   res.on('close', () => {
-    console.log(`MCP connection closed: ${sessionId}`);
     delete transports[sessionId];
   });
   
   try {
-    // 在这里使用新的MCP服务器
+
     await runMcpServer();
   } catch (error) {
     console.error('MCP connection error:', error);
@@ -90,7 +83,7 @@ app.all('/mcp', async (req, res) => {
 // 状态检查端点
 app.get('/status', (req, res) => {
   const activeConnections = Object.keys(transports).length;
-  console.log(`Status check: ${activeConnections} active connections`);
+
   res.json({ 
     status: 'ok', 
     activeConnections, 
@@ -121,7 +114,7 @@ const findAvailablePort = async (startPort, maxAttempts) => {
         });
         server.once('error', (err) => {
           if (err.code === 'EADDRINUSE') {
-            console.log(`Port ${port} is in use, trying next port...`);
+
             reject(err);
           } else {
             reject(err);
@@ -142,14 +135,6 @@ findAvailablePort(PORT, MAX_PORT_ATTEMPTS)
   .then(port => {
     PORT = port;
     app.listen(PORT, () => {
-      console.log(`4o-image MCP server started v${config.server.version}`);
-      console.log(`Server name: ${config.server.name}`);
-      console.log(`HTTP port: ${PORT}`);
-      console.log(`Official website: https://4o-image.app/`);
-      console.log('\nUsage:');
-      console.log('1. Configure this MCP server in Claude settings');
-      console.log('2. Set your API key using API_KEY environment variable');
-      console.log('3. Ask Claude to generate images\n');
     });
   })
   .catch(error => {
