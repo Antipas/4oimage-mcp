@@ -19,17 +19,22 @@
     "text-to-image",
     "ai",
     "claude",
-    "image-generation"
+    "image-generation",
+    "action-figure",
+    "3d-character-creator",
+    "ai-barbie-generator",
+    "chgpt-dog-to-human"
+
   ],
-  "author": "4o-image Team",
+  "author": "Antipas",
   "license": "MIT",
   "homepage": "https://4o-image.app/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/4oimage-mcp.git"
+    "url": "https://github.com/Antipas/4oimage-mcp"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/4oimage-mcp/issues"
+    "url": "https://github.com/Antipas/4oimage-mcp/issues"
   },
   "engines": {
     "node": ">=16.0.0"
