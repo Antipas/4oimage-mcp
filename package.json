@@ -1,6 +1,6 @@
 {
   "name": "4oimage-mcp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "MCP server for 4o-image API integration - Generate images using text prompts and edit existing images",
   "main": "server/index.js",
   "type": "module",
