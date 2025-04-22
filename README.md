@@ -2,6 +2,10 @@
 
 An MCP server implementation that integrates with 4o-image API, enabling LLMs and other AI systems to generate and edit images through a standardized protocol. Create high-quality art, 3D characters, and custom images using simple text prompts.
 
+<a href="https://glama.ai/mcp/servers/@Antipas/4oimage-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@Antipas/4oimage-mcp/badge" alt="mcp-4o-Image-Generator MCP server" />
+</a>
+
 [![npm version](https://img.shields.io/npm/v/4oimage-mcp.svg)](https://www.npmjs.com/package/4oimage-mcp)
 [![Node.js Version](https://img.shields.io/node/v/4oimage-mcp.svg)](https://nodejs.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -69,4 +73,4 @@ Edit this image to make the sky more dramatic with storm clouds
 
 ## License
 
-This MCP server is licensed under the MIT License. You are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License. 
+This MCP server is licensed under the MIT License. You are free to use, modify, and distribute the software, subject to the terms and conditions of the MIT License.
